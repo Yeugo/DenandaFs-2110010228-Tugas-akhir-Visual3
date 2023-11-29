@@ -1,4 +1,4 @@
-object FormSupplier: TFormSupplier
+object FrSupplier: TFrSupplier
   Left = 205
   Top = 85
   Width = 794

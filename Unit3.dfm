@@ -1,9 +1,9 @@
-object FormDataKustomer: TFormDataKustomer
+object FrDataKustomer: TFrDataKustomer
   Left = 192
   Top = 152
   Width = 928
   Height = 480
-  Caption = 'FormDataKustomer'
+  Caption = 'FrDataKustomer'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

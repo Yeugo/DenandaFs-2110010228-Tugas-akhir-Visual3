@@ -1,9 +1,9 @@
-object FrStockBarang: TFrStockBarang
-  Left = 313
-  Top = 185
-  Width = 768
-  Height = 516
-  Caption = 'Stock Barang'
+object FrUser: TFrUser
+  Left = 200
+  Top = 134
+  Width = 1064
+  Height = 587
+  Caption = 'Form User'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,45 +16,127 @@ object FrStockBarang: TFrStockBarang
   object l1: TLabel
     Left = 16
     Top = 16
-    Width = 61
+    Width = 35
     Height = 13
-    Caption = 'Kode Barang'
+    Caption = 'Id User'
   end
   object l2: TLabel
     Left = 16
     Top = 40
-    Width = 58
+    Width = 48
     Height = 13
-    Caption = 'Nama Barag'
+    Caption = 'Username'
   end
   object l3: TLabel
     Left = 16
     Top = 64
-    Width = 48
+    Width = 46
     Height = 13
-    Caption = 'Harga Beli'
+    Caption = 'Password'
   end
   object l4: TLabel
     Left = 16
     Top = 88
-    Width = 51
+    Width = 24
     Height = 13
-    Caption = 'Harga Jual'
+    Caption = 'Email'
   end
   object l5: TLabel
     Left = 16
     Top = 112
-    Width = 21
+    Width = 25
     Height = 13
-    Caption = 'Stok'
+    Caption = 'Level'
+  end
+  object l6: TLabel
+    Left = 16
+    Top = 136
+    Width = 31
+    Height = 13
+    Caption = 'Status'
+  end
+  object e1: TEdit
+    Left = 104
+    Top = 16
+    Width = 177
+    Height = 21
+    TabOrder = 0
+  end
+  object e2: TEdit
+    Left = 104
+    Top = 40
+    Width = 177
+    Height = 21
+    TabOrder = 1
+  end
+  object e3: TEdit
+    Left = 104
+    Top = 64
+    Width = 177
+    Height = 21
+    TabOrder = 2
+  end
+  object b1: TButton
+    Left = 16
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Simpan'
+    TabOrder = 3
+    OnClick = b1Click
+  end
+  object b2: TButton
+    Left = 96
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Edit'
+    TabOrder = 4
+    OnClick = b2Click
+  end
+  object b3: TButton
+    Left = 176
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Hapus'
+    TabOrder = 5
+  end
+  object b4: TButton
+    Left = 256
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Clear Form'
+    TabOrder = 6
+    OnClick = b4Click
+  end
+  object b5: TButton
+    Left = 336
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Print'
+    TabOrder = 7
+  end
+  object c1: TComboBox
+    Left = 104
+    Top = 112
+    Width = 177
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 8
+    Items.Strings = (
+      'Karyawan'
+      'Staff')
   end
   object dg1: TDBGrid
     Left = 16
-    Top = 192
-    Width = 481
-    Height = 193
+    Top = 208
+    Width = 817
+    Height = 321
     DataSource = d1
-    TabOrder = 0
+    TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -65,122 +147,64 @@ object FrStockBarang: TFrStockBarang
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'kode_barang'
+        FieldName = 'user_id'
         Title.Alignment = taCenter
-        Width = 88
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'nama_barang'
+        FieldName = 'username'
         Title.Alignment = taCenter
-        Width = 112
+        Width = 147
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'harga_beli'
+        FieldName = 'password'
         Title.Alignment = taCenter
-        Width = 90
+        Width = 123
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'harga_jual'
+        FieldName = 'email'
         Title.Alignment = taCenter
-        Width = 87
+        Width = 179
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'stok'
+        FieldName = 'level'
         Title.Alignment = taCenter
-        Width = 81
+        Width = 113
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'status'
+        Title.Alignment = taCenter
+        Width = 124
         Visible = True
       end>
   end
-  object e1: TEdit
-    Left = 88
-    Top = 16
-    Width = 177
-    Height = 21
-    TabOrder = 1
-  end
-  object e2: TEdit
-    Left = 88
-    Top = 40
-    Width = 177
-    Height = 21
-    TabOrder = 2
-  end
-  object e3: TEdit
-    Left = 88
-    Top = 64
-    Width = 177
-    Height = 21
-    TabOrder = 3
-  end
   object e4: TEdit
-    Left = 88
+    Left = 104
     Top = 88
     Width = 177
     Height = 21
-    TabOrder = 4
+    TabOrder = 10
   end
   object e5: TEdit
-    Left = 88
-    Top = 112
+    Left = 104
+    Top = 136
     Width = 177
     Height = 21
-    TabOrder = 5
-  end
-  object b1: TButton
-    Left = 16
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Simpan'
-    TabOrder = 6
-    OnClick = b1Click
-  end
-  object b2: TButton
-    Left = 96
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Edit'
-    TabOrder = 7
-    OnClick = b2Click
-  end
-  object b3: TButton
-    Left = 176
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Hapus'
-    TabOrder = 8
-    OnClick = b3Click
-  end
-  object b4: TButton
-    Left = 256
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Clear Form'
-    TabOrder = 9
-    OnClick = b4Click
-  end
-  object b5: TButton
-    Left = 336
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Print'
-    TabOrder = 10
+    TabOrder = 11
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -195,22 +219,22 @@ object FrStockBarang: TFrStockBarang
     LibraryLocation = 
       'C:\Users\ACER\Documents\Kuliah\Visual\Visual3\tugas-akhir-visual' +
       '-3\libmysql.dll'
-    Left = 296
-    Top = 24
+    Left = 328
+    Top = 32
   end
   object zqry1: TZQuery
     Connection = con1
     Active = True
     SQL.Strings = (
-      'select  *  from stock_barang')
+      'select  *  from user')
     Params = <>
-    Left = 344
-    Top = 24
+    Left = 376
+    Top = 32
   end
   object d1: TDataSource
     DataSet = zqry1
-    Left = 392
-    Top = 24
+    Left = 424
+    Top = 32
   end
   object frxReport1: TfrxReport
     Version = '4.12.6'
@@ -227,8 +251,8 @@ object FrStockBarang: TFrStockBarang
       'begin'
       ''
       'end.')
-    Left = 344
-    Top = 80
+    Left = 376
+    Top = 88
     Datasets = <
       item
         DataSet = frxdb1
@@ -584,7 +608,7 @@ object FrStockBarang: TFrStockBarang
     CloseDataSource = False
     DataSet = zqry1
     BCDToCurrency = False
-    Left = 392
-    Top = 80
+    Left = 424
+    Top = 88
   end
 end

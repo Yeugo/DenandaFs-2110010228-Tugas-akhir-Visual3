@@ -7,7 +7,7 @@ uses
   Dialogs;
 
 type
-  TFormDataKustomer = class(TForm)
+  TFrDataKustomer = class(TForm)
   private
     { Private declarations }
   public
@@ -15,7 +15,7 @@ type
   end;
 
 var
-  FormDataKustomer: TFormDataKustomer;
+  FrDataKustomer: TFrDataKustomer;
 
 implementation
 

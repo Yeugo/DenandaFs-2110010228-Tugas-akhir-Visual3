@@ -7,7 +7,7 @@ uses
   Dialogs, Menus;
 
 type
-  TFormMenu = class(TForm)
+  TFrMenu = class(TForm)
     MainMenu1: TMainMenu;
     Menu1: TMenuItem;
     StockBaranf1: TMenuItem;
@@ -20,6 +20,10 @@ type
     procedure StockBaranf1Click(Sender: TObject);
     procedure BarangMasuk1Click(Sender: TObject);
     procedure Supplyer1Click(Sender: TObject);
+    procedure Penjualan1Click(Sender: TObject);
+    procedure Pembayaran1Click(Sender: TObject);
+    procedure Kustomer1Click(Sender: TObject);
+    procedure User1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,33 +31,62 @@ type
   end;
 
 var
-  FormMenu: TFormMenu;
+  FrMenu: TFrMenu;
 
 implementation
 
-uses FormStockBarang, FormBarangMasuk, FormSupplyer;
+uses FormStockBarang, FormBarangMasuk, FormSupplyer, FormPenjualan,
+  FormPembayaran, FormKustomer, FormUser;
 
 {$R *.dfm}
 
-procedure TFormMenu.StockBaranf1Click(Sender: TObject);
+procedure TFrMenu.StockBaranf1Click(Sender: TObject);
 begin
-  if FormStock_Barang=nil then
-  FormStock_Barang:=TFormStock_Barang.Create(Application);
-  FormStock_Barang.Show;
+  if FrStockBarang=nil then
+  FrStockBarang:=TFrStockBarang.Create(Application);
+ FrStockBarang.Show;
 end;
 
-procedure TFormMenu.BarangMasuk1Click(Sender: TObject);
+procedure TFrMenu.BarangMasuk1Click(Sender: TObject);
 begin
-  if FormBarang_Masuk=nil then
-  FormBarang_Masuk:=TFormBarang_Masuk.Create(Application);
-  FormBarang_Masuk.Show;
+  if FrBarangMasuk=nil then
+  FrBarangMasuk:=TFrBarangMasuk.Create(Application);
+  FrBarangMasuk.Show;
 end;
 
-procedure TFormMenu.Supplyer1Click(Sender: TObject);
+procedure TFrMenu.Supplyer1Click(Sender: TObject);
 begin
-if FormSupplier=nil then
-  FormSupplier:=TFormSupplier.Create(Application);
-  FormSupplier.Show;
+  if FrSupplier=nil then
+  FrSupplier:=TFrSupplier.Create(Application);
+  FrSupplier.Show;
+end;
+
+procedure TFrMenu.Penjualan1Click(Sender: TObject);
+begin
+  if FrPenjualan=nil then
+  FrPenjualan:=TFrPenjualan.Create(Application);
+  FrPenjualan.Show;
+end;
+
+procedure TFrMenu.Pembayaran1Click(Sender: TObject);
+begin
+  if FrPembayaran=nil then
+  FrPembayaran:=TFrPembayaran.Create(Application);
+  FrPembayaran.Show;
+end;
+
+procedure TFrMenu.Kustomer1Click(Sender: TObject);
+begin
+  if FrKustomer=nil then
+  FrKustomer:=TFrKustomer.Create(Application);
+  FrKustomer.Show
+end;
+
+procedure TFrMenu.User1Click(Sender: TObject);
+begin
+  if FrUser=nil then
+  FrUser:=TFrUser.Create(Application);
+  FrUser.Show
 end;
 
 end.

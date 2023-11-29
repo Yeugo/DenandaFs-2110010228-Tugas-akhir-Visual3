@@ -1,6 +1,6 @@
-object FormBarang_Masuk: TFormBarang_Masuk
-  Left = 643
-  Top = 147
+object FrBarangMasuk: TFrBarangMasuk
+  Left = 327
+  Top = 109
   Width = 848
   Height = 525
   Caption = 'Form Barang Masuk'

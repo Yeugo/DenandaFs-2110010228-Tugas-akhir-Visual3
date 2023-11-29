@@ -1,9 +1,9 @@
-object FrStockBarang: TFrStockBarang
-  Left = 313
-  Top = 185
-  Width = 768
-  Height = 516
-  Caption = 'Stock Barang'
+object FrPembayaran: TFrPembayaran
+  Left = 235
+  Top = 133
+  Width = 928
+  Height = 591
+  Caption = 'Form Pembayaran'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,45 +16,131 @@ object FrStockBarang: TFrStockBarang
   object l1: TLabel
     Left = 16
     Top = 16
-    Width = 61
+    Width = 41
     Height = 13
-    Caption = 'Kode Barang'
+    Caption = 'Id Bayar'
   end
   object l2: TLabel
     Left = 16
     Top = 40
-    Width = 58
+    Width = 60
     Height = 13
-    Caption = 'Nama Barag'
+    Caption = 'Id Penjualan'
   end
   object l3: TLabel
     Left = 16
     Top = 64
-    Width = 48
+    Width = 41
     Height = 13
-    Caption = 'Harga Beli'
+    Caption = 'No Struk'
   end
   object l4: TLabel
     Left = 16
     Top = 88
-    Width = 51
+    Width = 28
     Height = 13
-    Caption = 'Harga Jual'
+    Caption = 'Bayar'
   end
   object l5: TLabel
     Left = 16
     Top = 112
-    Width = 21
+    Width = 36
     Height = 13
-    Caption = 'Stok'
+    Caption = 'Kembali'
+  end
+  object l6: TLabel
+    Left = 16
+    Top = 136
+    Width = 67
+    Height = 13
+    Caption = 'Metode Bayar'
+  end
+  object e1: TEdit
+    Left = 96
+    Top = 16
+    Width = 177
+    Height = 21
+    TabOrder = 0
+  end
+  object e2: TEdit
+    Left = 96
+    Top = 40
+    Width = 177
+    Height = 21
+    TabOrder = 1
+  end
+  object e3: TEdit
+    Left = 96
+    Top = 64
+    Width = 177
+    Height = 21
+    TabOrder = 2
+  end
+  object e4: TEdit
+    Left = 96
+    Top = 88
+    Width = 177
+    Height = 21
+    TabOrder = 3
+  end
+  object e5: TEdit
+    Left = 96
+    Top = 112
+    Width = 177
+    Height = 21
+    TabOrder = 4
+  end
+  object b1: TButton
+    Left = 16
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Simpan'
+    TabOrder = 5
+    OnClick = b1Click
+  end
+  object b2: TButton
+    Left = 96
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Edit'
+    TabOrder = 6
+    OnClick = b2Click
+  end
+  object b3: TButton
+    Left = 176
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Hapus'
+    TabOrder = 7
+    OnClick = b3Click
+  end
+  object b4: TButton
+    Left = 256
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Clear Form'
+    TabOrder = 8
+    OnClick = b4Click
+  end
+  object b5: TButton
+    Left = 336
+    Top = 168
+    Width = 75
+    Height = 25
+    Caption = 'Print'
+    TabOrder = 9
   end
   object dg1: TDBGrid
     Left = 16
-    Top = 192
-    Width = 481
-    Height = 193
+    Top = 208
+    Width = 457
+    Height = 249
     DataSource = d1
-    TabOrder = 0
+    TabOrder = 10
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -65,122 +151,62 @@ object FrStockBarang: TFrStockBarang
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'kode_barang'
+        FieldName = 'id_bayar'
         Title.Alignment = taCenter
-        Width = 88
+        Width = 62
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'nama_barang'
+        FieldName = 'id_penjualan'
         Title.Alignment = taCenter
-        Width = 112
+        Width = 77
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'harga_beli'
+        FieldName = 'no_struk'
         Title.Alignment = taCenter
-        Width = 90
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'harga_jual'
+        FieldName = 'bayar'
         Title.Alignment = taCenter
-        Width = 87
+        Width = 70
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'stok'
+        FieldName = 'kembali'
         Title.Alignment = taCenter
-        Width = 81
+        Width = 72
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'mtd_bayar'
+        Title.Alignment = taCenter
+        Width = 86
         Visible = True
       end>
   end
-  object e1: TEdit
-    Left = 88
-    Top = 16
-    Width = 177
-    Height = 21
-    TabOrder = 1
-  end
-  object e2: TEdit
-    Left = 88
-    Top = 40
-    Width = 177
-    Height = 21
-    TabOrder = 2
-  end
-  object e3: TEdit
-    Left = 88
-    Top = 64
-    Width = 177
-    Height = 21
-    TabOrder = 3
-  end
-  object e4: TEdit
-    Left = 88
-    Top = 88
-    Width = 177
-    Height = 21
-    TabOrder = 4
-  end
-  object e5: TEdit
-    Left = 88
-    Top = 112
-    Width = 177
-    Height = 21
-    TabOrder = 5
-  end
-  object b1: TButton
-    Left = 16
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Simpan'
-    TabOrder = 6
-    OnClick = b1Click
-  end
-  object b2: TButton
+  object c1: TComboBox
     Left = 96
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Edit'
-    TabOrder = 7
-    OnClick = b2Click
-  end
-  object b3: TButton
-    Left = 176
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Hapus'
-    TabOrder = 8
-    OnClick = b3Click
-  end
-  object b4: TButton
-    Left = 256
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Clear Form'
-    TabOrder = 9
-    OnClick = b4Click
-  end
-  object b5: TButton
-    Left = 336
-    Top = 144
-    Width = 75
-    Height = 25
-    Caption = 'Print'
-    TabOrder = 10
+    Top = 136
+    Width = 177
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 11
+    Text = 'c1'
+    Items.Strings = (
+      'Cash'
+      'Cashless')
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -202,7 +228,7 @@ object FrStockBarang: TFrStockBarang
     Connection = con1
     Active = True
     SQL.Strings = (
-      'select  *  from stock_barang')
+      'select  *  from pembayaran')
     Params = <>
     Left = 344
     Top = 24

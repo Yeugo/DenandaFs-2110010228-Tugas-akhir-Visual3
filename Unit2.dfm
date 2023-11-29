@@ -1,9 +1,9 @@
-object FormMenu: TFormMenu
-  Left = 296
-  Top = 187
+object FrMenu: TFrMenu
+  Left = 517
+  Top = 225
   Width = 600
   Height = 377
-  Caption = 'FormMenu'
+  Caption = 'Menu'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object FormMenu: TFormMenu
     Left = 24
     Top = 16
     object Menu1: TMenuItem
-      Caption = 'Menu'
+      Caption = 'Menu CRUD'
       object StockBaranf1: TMenuItem
         Caption = 'Stock Barang'
         OnClick = StockBaranf1Click
@@ -33,15 +33,19 @@ object FormMenu: TFormMenu
       end
       object Penjualan1: TMenuItem
         Caption = 'Penjualan'
+        OnClick = Penjualan1Click
       end
       object Pembayaran1: TMenuItem
         Caption = 'Pembayaran'
+        OnClick = Pembayaran1Click
       end
       object Kustomer1: TMenuItem
         Caption = 'Kustomer'
+        OnClick = Kustomer1Click
       end
       object User1: TMenuItem
         Caption = 'User'
+        OnClick = User1Click
       end
     end
   end

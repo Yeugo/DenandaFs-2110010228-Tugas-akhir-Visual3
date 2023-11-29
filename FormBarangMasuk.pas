@@ -9,7 +9,7 @@ uses
   ZConnection, StdCtrls;
 
 type
-  TFormBarang_Masuk = class(TForm)
+  TFrBarangMasuk = class(TForm)
     l1: TLabel;
     l2: TLabel;
     l3: TLabel;
@@ -46,13 +46,13 @@ type
   end;
 
 var
-  FormBarang_Masuk: TFormBarang_Masuk;
+  FrBarangMasuk: TFrBarangMasuk;
 
 implementation
 
 {$R *.dfm}
 
-procedure TFormBarang_Masuk.b1Click(Sender: TObject);
+procedure TFrBarangMasuk.b1Click(Sender: TObject);
 begin
 zqry1.SQL.Clear;
   zqry1.SQL.Add('insert into barang_masuk values("'+e1.Text+'", "'+e2.Text+'", "'+FormatDateTime('yyyy-mm-dd',dtp1.Date)+'", "'+e3.Text+'", "'+e4.Text+'", "'+e5.Text+'", "'+e6.Text+'")');
@@ -64,7 +64,7 @@ zqry1.SQL.Clear;
   Showmessage('DATA BERHASIL DI SIMPAN');
 end;
 
-procedure TFormBarang_Masuk.b2Click(Sender: TObject);
+procedure TFrBarangMasuk.b2Click(Sender: TObject);
 begin
   zqry1.Edit;
   zqry1.FieldByName('kode_barang').Text := e1.Text;
@@ -77,13 +77,13 @@ begin
   zqry1.Post;
 end;
 
-procedure TFormBarang_Masuk.b3Click(Sender: TObject);
+procedure TFrBarangMasuk.b3Click(Sender: TObject);
 begin
   if MessageDlg('Apakah Data Akan Di Hapus ???', mtConfirmation,[mbYes,mbNo],0)=mryes then
   zqry1.Delete;
 end;
 
-procedure TFormBarang_Masuk.dg1CellClick(Column: TColumn);
+procedure TFrBarangMasuk.dg1CellClick(Column: TColumn);
 begin
   e1.Text:=zqry1.Fields[0].AsString;
   e2.Text:=zqry1.Fields[1].AsString;

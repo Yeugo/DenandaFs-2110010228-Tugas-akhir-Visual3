@@ -1,8 +1,8 @@
-object Form_Penjualan: TForm_Penjualan
-  Left = 276
-  Top = 141
+object FrPenjualan: TFrPenjualan
+  Left = 249
+  Top = 55
   Width = 928
-  Height = 639
+  Height = 673
   Caption = 'Form Penjualan'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,48 +16,55 @@ object Form_Penjualan: TForm_Penjualan
   object l1: TLabel
     Left = 16
     Top = 16
-    Width = 10
+    Width = 60
     Height = 13
-    Caption = 'Id'
+    Caption = 'Id Penjualan'
   end
   object l2: TLabel
     Left = 16
     Top = 40
-    Width = 59
-    Height = 13
-    Caption = 'Nomor Struk'
-  end
-  object l3: TLabel
-    Left = 16
-    Top = 64
     Width = 61
     Height = 13
     Caption = 'Kode Barang'
   end
+  object l3: TLabel
+    Left = 16
+    Top = 64
+    Width = 64
+    Height = 13
+    Caption = 'Nama Barang'
+  end
   object l4: TLabel
     Left = 16
     Top = 88
-    Width = 88
+    Width = 75
     Height = 13
-    Caption = 'Tanggal Penjualan'
+    Caption = 'Nama Kustomer'
   end
   object l5: TLabel
     Left = 16
     Top = 112
-    Width = 70
+    Width = 88
     Height = 13
-    Caption = 'Jumlah Barang'
+    Caption = 'Tanggal Penjualan'
   end
   object l6: TLabel
     Left = 16
     Top = 136
-    Width = 66
+    Width = 33
     Height = 13
-    Caption = 'Harga Satuan'
+    Caption = 'Jumlah'
   end
   object l7: TLabel
     Left = 16
     Top = 160
+    Width = 66
+    Height = 13
+    Caption = 'Harga Satuan'
+  end
+  object l8: TLabel
+    Left = 16
+    Top = 184
     Width = 56
     Height = 13
     Caption = 'Total Harga'
@@ -85,14 +92,14 @@ object Form_Penjualan: TForm_Penjualan
   end
   object e4: TEdit
     Left = 112
-    Top = 112
+    Top = 88
     Width = 177
     Height = 21
     TabOrder = 3
   end
   object b1: TButton
     Left = 16
-    Top = 184
+    Top = 208
     Width = 75
     Height = 25
     Caption = 'Simpan'
@@ -101,61 +108,82 @@ object Form_Penjualan: TForm_Penjualan
   end
   object b2: TButton
     Left = 96
-    Top = 184
+    Top = 208
     Width = 75
     Height = 25
     Caption = 'Edit'
     TabOrder = 5
+    OnClick = b2Click
   end
   object b3: TButton
     Left = 176
-    Top = 184
+    Top = 208
     Width = 75
     Height = 25
     Caption = 'Hapus'
     TabOrder = 6
+    OnClick = b3Click
   end
   object b4: TButton
     Left = 256
-    Top = 184
+    Top = 208
     Width = 75
     Height = 25
     Caption = 'Clear Form'
     TabOrder = 7
+    OnClick = b4Click
   end
   object b5: TButton
     Left = 336
-    Top = 184
+    Top = 208
     Width = 75
     Height = 25
     Caption = 'Print'
     TabOrder = 8
   end
+  object dtp1: TDateTimePicker
+    Left = 112
+    Top = 112
+    Width = 177
+    Height = 21
+    Date = 45259.049789363420000000
+    Time = 45259.049789363420000000
+    TabOrder = 9
+  end
+  object e5: TEdit
+    Left = 112
+    Top = 136
+    Width = 177
+    Height = 21
+    TabOrder = 10
+  end
+  object e6: TEdit
+    Left = 112
+    Top = 160
+    Width = 177
+    Height = 21
+    TabOrder = 11
+  end
   object dg1: TDBGrid
     Left = 16
-    Top = 224
-    Width = 641
-    Height = 265
+    Top = 248
+    Width = 873
+    Height = 369
     DataSource = d1
-    TabOrder = 9
+    TabOrder = 12
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dg1CellClick
     Columns = <
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'id'
+        FieldName = 'id_penjualan'
         Title.Alignment = taCenter
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'no_struk'
-        Title.Alignment = taCenter
+        Width = 78
         Visible = True
       end
       item
@@ -163,6 +191,23 @@ object Form_Penjualan: TForm_Penjualan
         Expanded = False
         FieldName = 'kode_barang'
         Title.Alignment = taCenter
+        Width = 74
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'nama_barang'
+        Title.Alignment = taCenter
+        Width = 140
+        Visible = True
+      end
+      item
+        Alignment = taCenter
+        Expanded = False
+        FieldName = 'nama_kustomer'
+        Title.Alignment = taCenter
+        Width = 122
         Visible = True
       end
       item
@@ -170,6 +215,7 @@ object Form_Penjualan: TForm_Penjualan
         Expanded = False
         FieldName = 'tgl_penjulan'
         Title.Alignment = taCenter
+        Width = 107
         Visible = True
       end
       item
@@ -177,6 +223,7 @@ object Form_Penjualan: TForm_Penjualan
         Expanded = False
         FieldName = 'jumlah_barang'
         Title.Alignment = taCenter
+        Width = 95
         Visible = True
       end
       item
@@ -184,6 +231,7 @@ object Form_Penjualan: TForm_Penjualan
         Expanded = False
         FieldName = 'harga_satuan'
         Title.Alignment = taCenter
+        Width = 113
         Visible = True
       end
       item
@@ -191,31 +239,16 @@ object Form_Penjualan: TForm_Penjualan
         Expanded = False
         FieldName = 'total_harga'
         Title.Alignment = taCenter
+        Width = 116
         Visible = True
       end>
   end
-  object dtp1: TDateTimePicker
+  object e7: TEdit
     Left = 112
-    Top = 88
+    Top = 184
     Width = 177
     Height = 21
-    Date = 45259.049789363420000000
-    Time = 45259.049789363420000000
-    TabOrder = 10
-  end
-  object e5: TEdit
-    Left = 112
-    Top = 136
-    Width = 177
-    Height = 21
-    TabOrder = 11
-  end
-  object e6: TEdit
-    Left = 112
-    Top = 160
-    Width = 177
-    Height = 21
-    TabOrder = 12
+    TabOrder = 13
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
