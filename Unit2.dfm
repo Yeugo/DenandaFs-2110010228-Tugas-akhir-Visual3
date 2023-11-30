@@ -1,10 +1,10 @@
 object FrMenu: TFrMenu
-  Left = 517
-  Top = 225
-  Width = 600
+  Left = 400
+  Top = 219
+  Width = 534
   Height = 377
   Caption = 'Menu'
-  Color = clBtnFace
+  Color = clMoneyGreen
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -46,6 +46,37 @@ object FrMenu: TFrMenu
       object User1: TMenuItem
         Caption = 'User'
         OnClick = User1Click
+      end
+    end
+    object MenuKasir1: TMenuItem
+      Caption = 'Menu Kasir'
+      OnClick = MenuKasir1Click
+    end
+    object LaporanReport1: TMenuItem
+      Caption = 'Laporan/Report'
+      object LaporanStokBarang1: TMenuItem
+        Caption = 'Laporan Stok Barang'
+        OnClick = LaporanStokBarang1Click
+      end
+      object LaporanBarangMasuk1: TMenuItem
+        Caption = 'Laporan Barang Masuk'
+        OnClick = LaporanBarangMasuk1Click
+      end
+      object Laporan1: TMenuItem
+        Caption = 'Laporan Data Supplier'
+        OnClick = Laporan1Click
+      end
+      object LaporanPen1: TMenuItem
+        Caption = 'Laporan Penjualan'
+        OnClick = LaporanPen1Click
+      end
+      object LaporanKustomer1: TMenuItem
+        Caption = 'Laporan Data Kustomer'
+        OnClick = LaporanKustomer1Click
+      end
+      object LaporanDataUser1: TMenuItem
+        Caption = 'Laporan Data User'
+        OnClick = LaporanDataUser1Click
       end
     end
   end

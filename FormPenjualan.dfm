@@ -1,10 +1,10 @@
 object FrPenjualan: TFrPenjualan
-  Left = 249
-  Top = 55
+  Left = 284
+  Top = 99
   Width = 928
   Height = 673
   Caption = 'Form Penjualan'
-  Color = clBtnFace
+  Color = clMoneyGreen
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -133,14 +133,6 @@ object FrPenjualan: TFrPenjualan
     TabOrder = 7
     OnClick = b4Click
   end
-  object b5: TButton
-    Left = 336
-    Top = 208
-    Width = 75
-    Height = 25
-    Caption = 'Print'
-    TabOrder = 8
-  end
   object dtp1: TDateTimePicker
     Left = 112
     Top = 112
@@ -148,21 +140,21 @@ object FrPenjualan: TFrPenjualan
     Height = 21
     Date = 45259.049789363420000000
     Time = 45259.049789363420000000
-    TabOrder = 9
+    TabOrder = 8
   end
   object e5: TEdit
     Left = 112
     Top = 136
     Width = 177
     Height = 21
-    TabOrder = 10
+    TabOrder = 9
   end
   object e6: TEdit
     Left = 112
     Top = 160
     Width = 177
     Height = 21
-    TabOrder = 11
+    TabOrder = 10
   end
   object dg1: TDBGrid
     Left = 16
@@ -170,7 +162,7 @@ object FrPenjualan: TFrPenjualan
     Width = 873
     Height = 369
     DataSource = d1
-    TabOrder = 12
+    TabOrder = 11
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -248,7 +240,7 @@ object FrPenjualan: TFrPenjualan
     Top = 184
     Width = 177
     Height = 21
-    TabOrder = 13
+    TabOrder = 12
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP

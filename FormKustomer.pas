@@ -21,14 +21,13 @@ type
     b2: TButton;
     b3: TButton;
     b4: TButton;
-    b5: TButton;
     con1: TZConnection;
     zqry1: TZQuery;
     d1: TDataSource;
-    frxReport1: TfrxReport;
-    frxdb1: TfrxDBDataset;
     dg1: TDBGrid;
     c1: TComboBox;
+    frxReport1: TfrxReport;
+    frxdb1: TfrxDBDataset;
     procedure b1Click(Sender: TObject);
     procedure b2Click(Sender: TObject);
     procedure b3Click(Sender: TObject);

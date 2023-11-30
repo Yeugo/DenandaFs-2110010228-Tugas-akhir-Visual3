@@ -23,7 +23,6 @@ type
     b2: TButton;
     b3: TButton;
     b4: TButton;
-    b5: TButton;
     con1: TZConnection;
     zqry1: TZQuery;
     d1: TDataSource;
@@ -39,6 +38,7 @@ type
     procedure b2Click(Sender: TObject);
     procedure b3Click(Sender: TObject);
     procedure dg1CellClick(Column: TColumn);
+    procedure b4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -92,6 +92,16 @@ begin
   e4.Text:=zqry1.Fields[4].AsString;
   e5.Text:=zqry1.Fields[5].AsString;
   e6.Text:=zqry1.Fields[6].AsString;
+end;
+
+procedure TFrBarangMasuk.b4Click(Sender: TObject);
+begin
+  e1.Clear;
+  e2.Clear;
+  e3.Clear;
+  e4.Clear;
+  e5.Clear;
+  e6.Clear;
 end;
 
 end.

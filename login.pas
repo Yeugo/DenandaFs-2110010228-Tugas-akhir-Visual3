@@ -19,6 +19,7 @@ type
     e1: TEdit;
     l3: TLabel;
     l4: TLabel;
+    l5: TLabel;
     procedure btnLoginClick(Sender: TObject);
   private
     { Private declarations }
@@ -67,7 +68,7 @@ begin
               userid := zqryLogin.FieldValues['user_id']; //set userid berdasarkan sintaks di kanan
               //l1.Caption := userid; //assign userid sebagai value di Label4.Caption
               ShowMessage('Login sebagai Karyawan');
-              frDataKustomer.ShowModal;
+              FrKasir.ShowModal;
             end
           else if (loginLevel = 'Staff') then
             begin

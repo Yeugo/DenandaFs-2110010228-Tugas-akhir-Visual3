@@ -17,6 +17,14 @@ type
     Pembayaran1: TMenuItem;
     Kustomer1: TMenuItem;
     User1: TMenuItem;
+    LaporanReport1: TMenuItem;
+    LaporanStokBarang1: TMenuItem;
+    LaporanBarangMasuk1: TMenuItem;
+    Laporan1: TMenuItem;
+    LaporanPen1: TMenuItem;
+    LaporanKustomer1: TMenuItem;
+    LaporanDataUser1: TMenuItem;
+    MenuKasir1: TMenuItem;
     procedure StockBaranf1Click(Sender: TObject);
     procedure BarangMasuk1Click(Sender: TObject);
     procedure Supplyer1Click(Sender: TObject);
@@ -24,6 +32,13 @@ type
     procedure Pembayaran1Click(Sender: TObject);
     procedure Kustomer1Click(Sender: TObject);
     procedure User1Click(Sender: TObject);
+    procedure LaporanStokBarang1Click(Sender: TObject);
+    procedure LaporanBarangMasuk1Click(Sender: TObject);
+    procedure LaporanKustomer1Click(Sender: TObject);
+    procedure LaporanDataUser1Click(Sender: TObject);
+    procedure MenuKasir1Click(Sender: TObject);
+    procedure Laporan1Click(Sender: TObject);
+    procedure LaporanPen1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,7 +51,7 @@ var
 implementation
 
 uses FormStockBarang, FormBarangMasuk, FormSupplyer, FormPenjualan,
-  FormPembayaran, FormKustomer, FormUser;
+  FormPembayaran, FormKustomer, FormUser, Unit3;
 
 {$R *.dfm}
 
@@ -87,6 +102,43 @@ begin
   if FrUser=nil then
   FrUser:=TFrUser.Create(Application);
   FrUser.Show
+end;
+
+procedure TFrMenu.LaporanStokBarang1Click(Sender: TObject);
+begin
+  FrStockBarang.frxReport1.ShowReport();
+end;
+
+procedure TFrMenu.LaporanBarangMasuk1Click(Sender: TObject);
+begin
+  FrBarangMasuk.frxReport1.ShowReport();
+end;
+
+procedure TFrMenu.LaporanKustomer1Click(Sender: TObject);
+begin
+  FrKustomer.frxReport1.ShowReport();
+end;
+
+procedure TFrMenu.LaporanDataUser1Click(Sender: TObject);
+begin
+  FrUser.frxReport1.ShowReport();
+end;
+
+procedure TFrMenu.MenuKasir1Click(Sender: TObject);
+begin
+  if FrKasir=nil then
+  FrKasir:=TFrKasir.Create(Application);
+  FrKasir.Show
+end;
+
+procedure TFrMenu.Laporan1Click(Sender: TObject);
+begin
+  FrSupplier.frxReport1.ShowReport();
+end;
+
+procedure TFrMenu.LaporanPen1Click(Sender: TObject);
+begin
+  FrKasir.frxReport1.ShowReport();
 end;
 
 end.

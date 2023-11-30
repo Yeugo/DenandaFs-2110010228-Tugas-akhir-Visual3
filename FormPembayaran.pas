@@ -24,7 +24,6 @@ type
     b2: TButton;
     b3: TButton;
     b4: TButton;
-    b5: TButton;
     con1: TZConnection;
     zqry1: TZQuery;
     d1: TDataSource;

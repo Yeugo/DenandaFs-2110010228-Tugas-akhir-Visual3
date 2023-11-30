@@ -1,10 +1,10 @@
 object FormLogin: TFormLogin
   Left = 462
   Top = 190
-  Width = 575
-  Height = 353
+  Width = 568
+  Height = 243
   Caption = 'Login'
-  Color = clBtnFace
+  Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -53,6 +53,19 @@ object FormLogin: TFormLogin
     Font.Style = []
     ParentFont = False
   end
+  object l5: TLabel
+    Left = 149
+    Top = 16
+    Width = 37
+    Height = 16
+    Caption = 'LOGIN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object edtUserName: TEdit
     Left = 73
     Top = 44
@@ -92,13 +105,13 @@ object FormLogin: TFormLogin
     LibraryLocation = 
       'C:\Users\ACER\Documents\Kuliah\Visual\Visual3\tugas-akhir-visual' +
       '-3\libmysql.dll'
-    Left = 16
-    Top = 240
+    Left = 104
+    Top = 144
   end
   object dLogin: TDataSource
     DataSet = zqryLogin
-    Left = 72
-    Top = 240
+    Left = 160
+    Top = 144
   end
   object zqryLogin: TZQuery
     Connection = con1
@@ -106,7 +119,7 @@ object FormLogin: TFormLogin
     SQL.Strings = (
       'select * from user')
     Params = <>
-    Left = 128
-    Top = 240
+    Left = 216
+    Top = 144
   end
 end

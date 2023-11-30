@@ -1,10 +1,10 @@
 object FrPembayaran: TFrPembayaran
-  Left = 235
-  Top = 133
+  Left = 196
+  Top = 80
   Width = 928
   Height = 591
   Caption = 'Form Pembayaran'
-  Color = clBtnFace
+  Color = clMoneyGreen
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -126,21 +126,13 @@ object FrPembayaran: TFrPembayaran
     TabOrder = 8
     OnClick = b4Click
   end
-  object b5: TButton
-    Left = 336
-    Top = 168
-    Width = 75
-    Height = 25
-    Caption = 'Print'
-    TabOrder = 9
-  end
   object dg1: TDBGrid
     Left = 16
     Top = 208
     Width = 457
     Height = 249
     DataSource = d1
-    TabOrder = 10
+    TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -202,7 +194,7 @@ object FrPembayaran: TFrPembayaran
     Width = 177
     Height = 21
     ItemHeight = 13
-    TabOrder = 11
+    TabOrder = 10
     Text = 'c1'
     Items.Strings = (
       'Cash'
