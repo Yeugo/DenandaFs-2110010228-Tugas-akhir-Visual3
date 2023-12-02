@@ -13,13 +13,11 @@ type
     l3: TLabel;
     l4: TLabel;
     l5: TLabel;
-    l6: TLabel;
     e2: TEdit;
     e3: TEdit;
     b1: TButton;
     c1: TComboBox;
     e4: TEdit;
-    e5: TEdit;
     con1: TZConnection;
     zqry1: TZQuery;
     procedure b1Click(Sender: TObject);
@@ -37,15 +35,49 @@ implementation
 {$R *.dfm}
 
 procedure TFrAkun.b1Click(Sender: TObject);
+ var
+    cek : Boolean;
 begin
-  zqry1.SQL.Clear;
-  zqry1.SQL.Add('insert into user values(null, "'+e2.Text+'", "'+e3.Text+'", "'+e4.Text+'", "'+c1.Text+'", "'+e5.Text+'")');
-  zqry1.ExecSQL;
 
-  zqry1.SQL.Clear;
-  zqry1.SQL.Add('select * from user');
-  zqry1.Open;
-  Showmessage('Akun Berhasil Dibuat')
+  try
+    zqry1.SQL.Text := '';
+    zqry1.SQL.Text := 'SELECT * FROM user WHERE username = :username';
+    zqry1.ParamByName('username').Value := e2.Text;
+    zqry1.Open;
+
+    cek := not zqry1.IsEmpty;
+
+    //if zqry1.FieldByName('username').AsString = e2.Text then
+    if e2.Text = '' then
+    begin
+      ShowMessage('Username belum diisi');
+    end
+    else if e3.Text = '' then
+    begin
+      ShowMessage('Password belum diisi');
+    end
+    else if e4.Text = '' then
+    begin
+      ShowMessage('Email belum diisi');
+    end
+    else if c1.Text = '' then
+    begin
+      ShowMessage('Level belum diisi');
+    end
+    else if not cek then
+    begin
+      zqry1.SQL.Clear;
+      zqry1.SQL.Add('insert into user values(null, "'+e2.Text+'", "'+e3.Text+'", "'+e4.Text+'", "'+c1.Text+'", ''Aktif'')');
+      zqry1.ExecSQL;
+      Showmessage('Akun Berhasil Dibuat');
+    end
+    else
+    begin
+      ShowMessage('Username ini sudah ada!');
+      zqry1.SQL.Clear;
+    end;
+    finally
+  end;
 end;
 
 end.

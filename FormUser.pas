@@ -25,11 +25,11 @@ type
     c1: TComboBox;
     dg1: TDBGrid;
     e4: TEdit;
-    e5: TEdit;
     l5: TLabel;
     l6: TLabel;
     frxReport1: TfrxReport;
     frxdb1: TfrxDBDataset;
+    c2: TComboBox;
     procedure b1Click(Sender: TObject);
     procedure b2Click(Sender: TObject);
     procedure b4Click(Sender: TObject);
@@ -50,7 +50,7 @@ implementation
 procedure TFrUser.b1Click(Sender: TObject);
 begin
   zqry1.SQL.Clear;
-  zqry1.SQL.Add('insert into user values(null, "'+e2.Text+'", "'+e3.Text+'", "'+e4.Text+'", "'+c1.Text+'", "'+e5.Text+'")');
+  zqry1.SQL.Add('insert into user values(null, "'+e2.Text+'", "'+e3.Text+'", "'+e4.Text+'", "'+c1.Text+'", "'+c2.Text+'")');
   zqry1.ExecSQL;
 
   zqry1.SQL.Clear;
@@ -66,7 +66,7 @@ begin
   zqry1.FieldByName('password').Text := e3.Text;
   zqry1.FieldByName('email').Text := e4.Text;
   zqry1.FieldByName('level').Text := c1.Text;
-  zqry1.FieldByName('status').Text := e5.Text;
+  zqry1.FieldByName('status').Text := c2.Text;
   zqry1.Post;
 end;
 
@@ -76,7 +76,7 @@ begin
   e3.Clear;
   e4.Clear;
   c1.Clear;
-  e5.Clear;
+  c2.Clear;
 end;
 
 procedure TFrUser.dg1CellClick(Column: TColumn);
@@ -85,7 +85,7 @@ begin
   e3.Text:=zqry1.Fields[2].AsString;
   e4.Text:=zqry1.Fields[3].AsString;
   c1.Text:=zqry1.Fields[4].AsString;
-  e5.Text:=zqry1.Fields[5].AsString;;
+  c2.Text:=zqry1.Fields[5].AsString;;
 end;
 
 end.

@@ -39,7 +39,7 @@ uses Unit3, Unit2;
 procedure TFormLogin.btnLoginClick(Sender: TObject);
 var
   nama, password, level, loginLevel, querylogin, userid: string;
-  sts: integer;
+  sts: string;
 begin
 //cukup jelas
   nama := edtUserName.Text;
@@ -60,7 +60,7 @@ begin
   if (zqryLogin.RecordCount > 0) then //jika kueri di atas mengembalikan hasil
     begin
       sts := zqryLogin.FieldValues['status']; //ambil value dari kolom `status`
-      if (sts = 1) then //memeriksa sts
+      if (sts = 'Aktif') then //memeriksa sts
         begin
           loginLevel := zqryLogin.FieldValues['level']; //ambil value dari kolom `level` sebagai string
           if (loginLevel = 'Karyawan') then //memeriksa loginLevel

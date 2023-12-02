@@ -177,12 +177,16 @@ object FrUser: TFrUser
     Height = 21
     TabOrder = 8
   end
-  object e5: TEdit
+  object c2: TComboBox
     Left = 104
     Top = 104
     Width = 177
     Height = 21
+    ItemHeight = 13
     TabOrder = 9
+    Items.Strings = (
+      'Aktif'
+      'Tidak Aktif')
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP

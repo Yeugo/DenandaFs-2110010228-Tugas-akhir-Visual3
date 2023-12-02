@@ -41,13 +41,6 @@ object FrAkun: TFrAkun
     Height = 13
     Caption = 'Level'
   end
-  object l6: TLabel
-    Left = 16
-    Top = 112
-    Width = 31
-    Height = 13
-    Caption = 'Status'
-  end
   object e2: TEdit
     Left = 104
     Top = 16
@@ -64,7 +57,7 @@ object FrAkun: TFrAkun
   end
   object b1: TButton
     Left = 16
-    Top = 144
+    Top = 120
     Width = 265
     Height = 25
     Caption = 'Buat Akun'
@@ -89,13 +82,6 @@ object FrAkun: TFrAkun
     Height = 21
     TabOrder = 4
   end
-  object e5: TEdit
-    Left = 104
-    Top = 112
-    Width = 177
-    Height = 21
-    TabOrder = 5
-  end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
@@ -110,7 +96,7 @@ object FrAkun: TFrAkun
       'C:\Users\ACER\Documents\Kuliah\Visual\Visual3\tugas-akhir-visual' +
       '-3\libmysql.dll'
     Left = 16
-    Top = 184
+    Top = 160
   end
   object zqry1: TZQuery
     Connection = con1
@@ -119,6 +105,6 @@ object FrAkun: TFrAkun
       'select  *  from user')
     Params = <>
     Left = 64
-    Top = 184
+    Top = 160
   end
 end
