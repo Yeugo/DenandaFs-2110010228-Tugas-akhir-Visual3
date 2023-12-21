@@ -25,6 +25,7 @@ type
     LaporanKustomer1: TMenuItem;
     LaporanDataUser1: TMenuItem;
     MenuKasir1: TMenuItem;
+    est1: TMenuItem;
     procedure StockBaranf1Click(Sender: TObject);
     procedure BarangMasuk1Click(Sender: TObject);
     procedure Supplyer1Click(Sender: TObject);
@@ -39,6 +40,7 @@ type
     procedure MenuKasir1Click(Sender: TObject);
     procedure Laporan1Click(Sender: TObject);
     procedure LaporanPen1Click(Sender: TObject);
+    procedure est1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,7 +53,7 @@ var
 implementation
 
 uses FormStockBarang, FormBarangMasuk, FormSupplyer, FormPenjualan,
-  FormPembayaran, FormKustomer, FormUser, Unit3;
+  FormPembayaran, FormKustomer, FormUser, Unit3, FormLaporanPembayaran;
 
 {$R *.dfm}
 
@@ -139,6 +141,11 @@ end;
 procedure TFrMenu.LaporanPen1Click(Sender: TObject);
 begin
   FrKasir.frxReport1.ShowReport();
+end;
+
+procedure TFrMenu.est1Click(Sender: TObject);
+begin
+  FrLapPenjualan.ShowModal;
 end;
 
 end.

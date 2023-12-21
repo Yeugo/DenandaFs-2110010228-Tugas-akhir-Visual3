@@ -1,6 +1,6 @@
 object FrHome: TFrHome
-  Left = 330
-  Top = 202
+  Left = 392
+  Top = 148
   Width = 494
   Height = 488
   Caption = 'Welcome'
@@ -16,8 +16,8 @@ object FrHome: TFrHome
   object l1: TLabel
     Left = 8
     Top = 8
-    Width = 465
-    Height = 25
+    Width = 455
+    Height = 19
     Caption = 'Selamat Datang Di Aplikasi Pengelolaan Toko Furniture'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

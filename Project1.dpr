@@ -13,7 +13,8 @@ uses
   FormKustomer in 'FormKustomer.pas' {FrKustomer},
   FormUser in 'FormUser.pas' {FrUser},
   FormAkun in 'FormAkun.pas' {FrAkun},
-  FormHome in 'FormHome.pas' {FrHome};
+  FormHome in 'FormHome.pas' {FrHome},
+  FormLaporanPembayaran in 'FormLaporanPembayaran.pas' {FrLapPenjualan};
 
 {$R *.res}
 
@@ -31,5 +32,6 @@ begin
   Application.CreateForm(TFrKustomer, FrKustomer);
   Application.CreateForm(TFrUser, FrUser);
   Application.CreateForm(TFrAkun, FrAkun);
+  Application.CreateForm(TFrLapPenjualan, FrLapPenjualan);
   Application.Run;
 end.

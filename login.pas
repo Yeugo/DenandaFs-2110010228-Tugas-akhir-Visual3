@@ -38,7 +38,7 @@ uses Unit3, Unit2;
 
 procedure TFormLogin.btnLoginClick(Sender: TObject);
 var
-  nama, password, level, loginLevel, querylogin, userid: string;
+  nama, password, loginLevel, querylogin, userid: string;
   sts: string;
 begin
 //cukup jelas
@@ -80,9 +80,13 @@ begin
         end
       else //jika tidak
         begin
-          ShowMessage('Login Gagal'); //jalankan ini
+          ShowMessage('Username atau Password Salah!!!'); //jalankan ini
         end;
-    end;
+    end
+    else
+    begin
+      ShowMessage('User ini belum terdaftar, Silahkan buat Akun!!!');
+    end;  
 //  frConnection.ZqLogin.Close;
 end;
 
