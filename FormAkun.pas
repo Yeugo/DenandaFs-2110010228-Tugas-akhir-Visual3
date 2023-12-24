@@ -45,6 +45,8 @@ begin
     zqry1.ParamByName('username').Value := e2.Text;
     zqry1.Open;
 
+
+
     cek := not zqry1.IsEmpty;
 
     //if zqry1.FieldByName('username').AsString = e2.Text then
@@ -67,7 +69,11 @@ begin
     else if not cek then
     begin
       zqry1.SQL.Clear;
-      zqry1.SQL.Add('insert into user values(null, "'+e2.Text+'", "'+e3.Text+'", "'+e4.Text+'", "'+c1.Text+'", ''Aktif'')');
+      zqry1.SQL.Add('INSERT INTO user (user_id, username, password, email, level, status) VALUES (null, :username, AES_ENCRYPT(:password, ''76jV60mkzU''), :email, :level, ''aktif'')');
+      zqry1.ParamByName('username').Value := e2.Text;
+      zqry1.ParamByName('password').Value := e3.Text;
+      zqry1.ParamByName('email').Value := e4.Text;
+      zqry1.ParamByName('level').Value := c1.Text;
       zqry1.ExecSQL;
       Showmessage('Akun Berhasil Dibuat');
     end
