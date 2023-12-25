@@ -1,6 +1,6 @@
 object FrStockBarang: TFrStockBarang
-  Left = 354
-  Top = 222
+  Left = 433
+  Top = 194
   Width = 768
   Height = 516
   Caption = 'Stock Barang'
@@ -48,10 +48,17 @@ object FrStockBarang: TFrStockBarang
     Height = 13
     Caption = 'Stok'
   end
+  object l6: TLabel
+    Left = 368
+    Top = 160
+    Width = 56
+    Height = 13
+    Caption = 'Cari Barang'
+  end
   object dg1: TDBGrid
     Left = 16
     Top = 192
-    Width = 481
+    Width = 537
     Height = 193
     DataSource = d1
     TabOrder = 0
@@ -174,6 +181,13 @@ object FrStockBarang: TFrStockBarang
     TabOrder = 9
     OnClick = b4Click
   end
+  object e6: TEdit
+    Left = 432
+    Top = 160
+    Width = 121
+    Height = 21
+    TabOrder = 10
+  end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
@@ -187,8 +201,8 @@ object FrStockBarang: TFrStockBarang
     LibraryLocation = 
       'C:\Users\ACER\Documents\Kuliah\Visual\Visual3\tugas-akhir-visual' +
       '-3\libmysql.dll'
-    Left = 296
-    Top = 24
+    Left = 280
+    Top = 8
   end
   object zqry1: TZQuery
     Connection = con1
@@ -196,13 +210,13 @@ object FrStockBarang: TFrStockBarang
     SQL.Strings = (
       'select  *  from stock_barang')
     Params = <>
-    Left = 344
-    Top = 24
+    Left = 328
+    Top = 8
   end
   object d1: TDataSource
     DataSet = zqry1
-    Left = 392
-    Top = 24
+    Left = 376
+    Top = 8
   end
   object frxReport1: TfrxReport
     Version = '4.12.6'
@@ -219,8 +233,8 @@ object FrStockBarang: TFrStockBarang
       'begin'
       ''
       'end.')
-    Left = 344
-    Top = 80
+    Left = 328
+    Top = 64
     Datasets = <
       item
         DataSet = frxdb1
@@ -485,7 +499,7 @@ object FrStockBarang: TFrStockBarang
       'stok=stok')
     DataSet = zqry1
     BCDToCurrency = False
-    Left = 392
-    Top = 80
+    Left = 376
+    Top = 64
   end
 end

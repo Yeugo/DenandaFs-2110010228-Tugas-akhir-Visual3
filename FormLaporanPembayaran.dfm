@@ -39,113 +39,12 @@ object FrLapPenjualan: TFrLapPenjualan
     Font.Style = []
     ParentFont = False
   end
-  object dg1: TDBGrid
-    Left = 8
-    Top = 64
-    Width = 985
-    Height = 353
-    DataSource = d1
-    TabOrder = 0
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    Columns = <
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'id_penjualan'
-        Title.Alignment = taCenter
-        Width = 67
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'kode_barang'
-        Title.Alignment = taCenter
-        Width = 73
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'nama_barang'
-        Title.Alignment = taCenter
-        Width = 124
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'nama_kustomer'
-        Title.Alignment = taCenter
-        Width = 126
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'tgl_penjulan'
-        Title.Alignment = taCenter
-        Width = 77
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'jumlah_barang'
-        Title.Alignment = taCenter
-        Width = 83
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'total_harga'
-        Title.Alignment = taCenter
-        Width = 75
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'no_struk'
-        Title.Alignment = taCenter
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'bayar'
-        Title.Alignment = taCenter
-        Width = 74
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'kembali'
-        Title.Alignment = taCenter
-        Width = 79
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'mtd_bayar'
-        Title.Alignment = taCenter
-        Width = 85
-        Visible = True
-      end>
-  end
   object eCari: TEdit
     Left = 792
     Top = 32
     Width = 201
     Height = 21
-    TabOrder = 1
+    TabOrder = 0
     OnChange = eCariChange
   end
   object c1: TComboBox
@@ -154,8 +53,7 @@ object FrLapPenjualan: TFrLapPenjualan
     Width = 65
     Height = 21
     ItemHeight = 13
-    TabOrder = 2
-    OnChange = c1Change
+    TabOrder = 1
     Items.Strings = (
       'Nama Barang'
       'Total Harga')
@@ -166,8 +64,21 @@ object FrLapPenjualan: TFrLapPenjualan
     Width = 113
     Height = 25
     Caption = 'Order by Total Harga'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = b1Click
+  end
+  object dg1: TDBGrid
+    Left = 8
+    Top = 64
+    Width = 969
+    Height = 337
+    DataSource = d1
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -189,6 +100,20 @@ object FrLapPenjualan: TFrLapPenjualan
     Connection = con1
     Active = True
     SQL.Strings = (
+      'SELECT * FROM penjualan;')
+    Params = <>
+    Left = 56
+    Top = 8
+  end
+  object d1: TDataSource
+    DataSet = zqry1
+    Left = 104
+    Top = 8
+  end
+  object zqry2: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
       
         'SELECT penjualan.id_penjualan, penjualan.kode_barang, penjualan.' +
         'nama_barang, penjualan.nama_kustomer, penjualan.tgl_penjulan, pe' +
@@ -199,12 +124,7 @@ object FrLapPenjualan: TFrLapPenjualan
         'INNER JOIN pembayaran ON penjualan.id_penjualan = pembayaran.id_' +
         'penjualan;')
     Params = <>
-    Left = 56
-    Top = 8
-  end
-  object d1: TDataSource
-    DataSet = zqry1
-    Left = 104
+    Left = 144
     Top = 8
   end
 end

@@ -29,6 +29,8 @@ type
     d1: TDataSource;
     frxReport1: TfrxReport;
     frxdb1: TfrxDBDataset;
+    e6: TEdit;
+    l6: TLabel;
     procedure b1Click(Sender: TObject);
     procedure b2Click(Sender: TObject);
     procedure b3Click(Sender: TObject);

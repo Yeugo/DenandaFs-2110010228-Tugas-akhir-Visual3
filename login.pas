@@ -46,7 +46,7 @@ begin
   password := e1.Text;
 
   //assign kueri ke variabel querylogin
-  querylogin := 'SELECT * FROM user WHERE username = :nama AND `password` = :password';
+  querylogin := 'SELECT * FROM user WHERE username = :nama AND password = AES_ENCRYPT(`password`, ''76jV60mkzU'') = :password';
 
   //clear properti SQL dan tambahkan querylogin
   zqryLogin.SQL.Clear;
