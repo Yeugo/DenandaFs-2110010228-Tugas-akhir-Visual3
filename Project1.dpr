@@ -14,7 +14,6 @@ uses
   FormUser in 'FormUser.pas' {FrUser},
   FormAkun in 'FormAkun.pas' {FrAkun},
   FormHome in 'FormHome.pas' {FrHome},
-  FormLaporanPembayaran in 'FormLaporanPembayaran.pas' {FrLapPenjualan},
   FormLapStokBarang in 'Laporan\FormLapStokBarang.pas' {FrLapStokBarang},
   FormLapBarangMasuk in 'Laporan\FormLapBarangMasuk.pas' {FrLapBarangMasuk},
   FormLapSupplier in 'Laporan\FormLapSupplier.pas' {FrLapSupplier},
@@ -38,7 +37,6 @@ begin
   Application.CreateForm(TFrKustomer, FrKustomer);
   Application.CreateForm(TFrUser, FrUser);
   Application.CreateForm(TFrAkun, FrAkun);
-  Application.CreateForm(TFrLapPenjualan, FrLapPenjualan);
   Application.CreateForm(TFrLapStokBarang, FrLapStokBarang);
   Application.CreateForm(TFrLapBarangMasuk, FrLapBarangMasuk);
   Application.CreateForm(TFrLapSupplier, FrLapSupplier);

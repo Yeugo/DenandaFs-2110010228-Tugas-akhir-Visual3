@@ -1,6 +1,6 @@
 object FrLapPenjualan: TFrLapPenjualan
-  Left = 132
-  Top = 169
+  Left = 82
+  Top = 294
   Width = 1255
   Height = 480
   Caption = 'FrLapPenjualan'

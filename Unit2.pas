@@ -25,7 +25,6 @@ type
     LaporanKustomer1: TMenuItem;
     LaporanDataUser1: TMenuItem;
     MenuKasir1: TMenuItem;
-    est1: TMenuItem;
     procedure StockBaranf1Click(Sender: TObject);
     procedure BarangMasuk1Click(Sender: TObject);
     procedure Supplyer1Click(Sender: TObject);
@@ -53,7 +52,9 @@ var
 implementation
 
 uses FormStockBarang, FormBarangMasuk, FormSupplyer, FormPenjualan,
-  FormPembayaran, FormKustomer, FormUser, Unit3, FormLaporanPembayaran;
+  FormPembayaran, FormKustomer, FormUser, Unit3, FormLaporanPembayaran,
+  FormLapUser, FormLapKustomer, FormLapPenjualan, FormLapSupplier,
+  FormLapBarangMasuk, FormLapStokBarang;
 
 {$R *.dfm}
 
@@ -108,22 +109,30 @@ end;
 
 procedure TFrMenu.LaporanStokBarang1Click(Sender: TObject);
 begin
-  FrStockBarang.frxReport1.ShowReport();
+  if FrLapStokBarang=nil then
+  FrLapStokBarang:=FrLapStokBarang.Create(Application);
+  FrLapStokBarang.Show
 end;
 
 procedure TFrMenu.LaporanBarangMasuk1Click(Sender: TObject);
 begin
-  FrBarangMasuk.frxReport1.ShowReport();
+  if FrLapBarangMasuk=nil then
+  FrLapBarangMasuk:=FrLapBarangMasuk.Create(Application);
+  FrLapBarangMasuk.Show
 end;
 
 procedure TFrMenu.LaporanKustomer1Click(Sender: TObject);
 begin
-  FrKustomer.frxReport1.ShowReport();
+  if FrLapKustomer=nil then
+  FrLapKustomer:=FrLapKustomer.Create(Application);
+  FrLapKustomer.Show
 end;
 
 procedure TFrMenu.LaporanDataUser1Click(Sender: TObject);
 begin
-  FrUser.frxReport1.ShowReport();
+  if FrLapUser=nil then
+  FrLapUser:=FrLapUser.Create(Application);
+  FrLapUser.Show
 end;
 
 procedure TFrMenu.MenuKasir1Click(Sender: TObject);
@@ -135,12 +144,16 @@ end;
 
 procedure TFrMenu.Laporan1Click(Sender: TObject);
 begin
-  FrSupplier.frxReport1.ShowReport();
+  if FrLapSupplier=nil then
+  FrLapSupplier:=FrLapSupplier.Create(Application);
+  FrLapSupplier.Show
 end;
 
 procedure TFrMenu.LaporanPen1Click(Sender: TObject);
 begin
-  FrKasir.frxReport1.ShowReport();
+  if FrLapPenjualann=nil then
+  FrLapPenjualann:=FrLapPenjualann.Create(Application);
+  FrLapPenjualann.Show
 end;
 
 procedure TFrMenu.est1Click(Sender: TObject);

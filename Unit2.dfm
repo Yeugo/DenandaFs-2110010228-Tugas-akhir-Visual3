@@ -79,9 +79,5 @@ object FrMenu: TFrMenu
         OnClick = LaporanDataUser1Click
       end
     end
-    object est1: TMenuItem
-      Caption = 'Test'
-      OnClick = est1Click
-    end
   end
 end

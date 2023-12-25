@@ -1,8 +1,8 @@
 object FrLapPenjualann: TFrLapPenjualann
-  Left = 219
-  Top = 173
-  Width = 1318
-  Height = 578
+  Left = 93
+  Top = 96
+  Width = 1017
+  Height = 577
   Caption = 'Laporan Data Penjualan'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -21,7 +21,7 @@ object FrLapPenjualann: TFrLapPenjualann
     Caption = 'Filter Data'
   end
   object TLabel
-    Left = 368
+    Left = 392
     Top = 8
     Width = 213
     Height = 19
@@ -34,12 +34,20 @@ object FrLapPenjualann: TFrLapPenjualann
     Font.Style = []
     ParentFont = False
   end
+  object l2: TLabel
+    Left = 592
+    Top = 56
+    Width = 45
+    Height = 13
+    Caption = 'Cari Data'
+  end
   object eCari: TEdit
     Left = 648
     Top = 56
     Width = 201
     Height = 21
     TabOrder = 0
+    OnChange = eCariChange
   end
   object dg1: TDBGrid
     Left = 8
@@ -151,18 +159,11 @@ object FrLapPenjualann: TFrLapPenjualann
     ItemHeight = 13
     TabOrder = 2
     Text = 'Default'
+    OnChange = c1Change
     Items.Strings = (
       'Default'
       'Nama Barang'
       'Total Harga')
-  end
-  object b2: TButton
-    Left = 568
-    Top = 56
-    Width = 75
-    Height = 25
-    Caption = 'Cari Data'
-    TabOrder = 3
   end
   object b1: TButton
     Left = 856
@@ -170,7 +171,8 @@ object FrLapPenjualann: TFrLapPenjualann
     Width = 121
     Height = 25
     Caption = 'Cetak'
-    TabOrder = 4
+    TabOrder = 3
+    OnClick = b1Click
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP

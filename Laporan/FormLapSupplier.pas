@@ -15,13 +15,15 @@ type
     con1: TZConnection;
     d1: TDataSource;
     zqry2: TZQuery;
-    b2: TButton;
     l1: TLabel;
-    frxdb1: TfrxDBDataset;
-    frxReport1: TfrxReport;
-    frxdb2: TfrxDBDataset;
     b1: TButton;
     dg1: TDBGrid;
+    l2: TLabel;
+    frxReport1: TfrxReport;
+    frxdb1: TfrxDBDataset;
+    procedure c1Change(Sender: TObject);
+    procedure eCariChange(Sender: TObject);
+    procedure b1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,5 +36,39 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrLapSupplier.c1Change(Sender: TObject);
+begin
+  if c1.Text = 'Nama Supplier' then
+   begin
+      zqry2.SQL.Clear;
+      zqry2.SQL.Add('select * from supplyer order by nama_supplyer ASC');
+      zqry2.Open;
+   end
+   else if c1.Text = 'Alamat' then
+   begin
+      zqry2.SQL.Clear;
+      zqry2.SQL.Add('select * from supplyer order by telepon ASC');;
+      zqry2.Open;
+   end
+   else
+   begin
+     zqry2.SQL.Clear;
+     zqry2.SQL.Add('select * from supplyer');
+     zqry2.Open;
+   end;
+end;
+
+procedure TFrLapSupplier.eCariChange(Sender: TObject);
+begin
+    zqry2.SQL.Clear;
+    zqry2.SQL.Add('select * from supplyer where kode_supplyer like "%'+eCari.Text+'%" or nama_supplyer like "%'+eCari.Text+'%"');
+    zqry2.Open;
+end;
+
+procedure TFrLapSupplier.b1Click(Sender: TObject);
+begin
+  frxReport1.ShowReport();
+end;
 
 end.
