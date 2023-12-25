@@ -1,9 +1,9 @@
-object FrLapPenjualan: TFrLapPenjualan
-  Left = 132
-  Top = 169
-  Width = 1255
-  Height = 480
-  Caption = 'FrLapPenjualan'
+object FrLapUser: TFrLapUser
+  Left = 286
+  Top = 153
+  Width = 796
+  Height = 596
+  Caption = 'Laporan Data User'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,28 +13,70 @@ object FrLapPenjualan: TFrLapPenjualan
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object TLabel
+    Left = 280
+    Top = 8
+    Width = 164
+    Height = 19
+    Alignment = taCenter
+    Caption = 'LAPORAN DATA USER'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object l1: TLabel
-    Left = 408
-    Top = 32
+    Left = 176
+    Top = 48
     Width = 50
     Height = 13
     Caption = 'Filter Data'
   end
   object eCari: TEdit
-    Left = 648
-    Top = 32
-    Width = 201
+    Left = 416
+    Top = 48
+    Width = 193
     Height = 21
     TabOrder = 0
-    OnChange = eCariChange
+  end
+  object c1: TComboBox
+    Left = 232
+    Top = 48
+    Width = 89
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 1
+    Text = 'Default'
+    Items.Strings = (
+      'Default'
+      'Nama Barang'
+      'Total Harga')
+  end
+  object b2: TButton
+    Left = 336
+    Top = 48
+    Width = 75
+    Height = 25
+    Caption = 'Cari Data'
+    TabOrder = 2
+  end
+  object b1: TButton
+    Left = 615
+    Top = 48
+    Width = 121
+    Height = 25
+    Caption = 'Cetak'
+    TabOrder = 3
   end
   object dg1: TDBGrid
-    Left = 8
-    Top = 64
-    Width = 969
-    Height = 337
+    Left = 16
+    Top = 80
+    Width = 721
+    Height = 345
     DataSource = d1
-    TabOrder = 1
+    TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -44,123 +86,50 @@ object FrLapPenjualan: TFrLapPenjualan
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'id_penjualan'
+        FieldName = 'user_id'
         Title.Alignment = taCenter
-        Width = 70
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'kode_barang'
+        FieldName = 'username'
         Title.Alignment = taCenter
-        Width = 78
+        Width = 124
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'nama_barang'
+        FieldName = 'password'
         Title.Alignment = taCenter
-        Width = 114
+        Width = 137
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'nama_kustomer'
+        FieldName = 'email'
         Title.Alignment = taCenter
-        Width = 119
+        Width = 143
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'tgl_penjulan'
+        FieldName = 'level'
         Title.Alignment = taCenter
-        Width = 81
+        Width = 104
         Visible = True
       end
       item
         Alignment = taCenter
         Expanded = False
-        FieldName = 'jumlah_barang'
+        FieldName = 'status'
         Title.Alignment = taCenter
-        Width = 84
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'total_harga'
-        Title.Alignment = taCenter
-        Width = 77
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'no_struk'
-        Title.Alignment = taCenter
-        Width = 69
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'bayar'
-        Title.Alignment = taCenter
-        Width = 68
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'kembali'
-        Title.Alignment = taCenter
-        Width = 69
-        Visible = True
-      end
-      item
-        Alignment = taCenter
-        Expanded = False
-        FieldName = 'mtd_bayar'
-        Title.Alignment = taCenter
-        Width = 79
+        Width = 98
         Visible = True
       end>
-  end
-  object c1: TComboBox
-    Left = 464
-    Top = 32
-    Width = 89
-    Height = 21
-    ItemHeight = 13
-    TabOrder = 2
-    Text = 'Default'
-    OnChange = c1Change
-    Items.Strings = (
-      'Default'
-      'Nama Barang'
-      'Total Harga')
-  end
-  object b2: TButton
-    Left = 568
-    Top = 32
-    Width = 75
-    Height = 25
-    Caption = 'Cari Data'
-    TabOrder = 3
-    OnClick = b2Click
-  end
-  object b1: TButton
-    Left = 856
-    Top = 32
-    Width = 121
-    Height = 25
-    Caption = 'Cetak'
-    TabOrder = 4
-    OnClick = b1Click
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -175,39 +144,22 @@ object FrLapPenjualan: TFrLapPenjualan
     LibraryLocation = 
       'C:\Users\ACER\Documents\Kuliah\Visual\Visual3\tugas-akhir-visual' +
       '-3\libmysql.dll'
-    Left = 8
-    Top = 8
-  end
-  object zqry1: TZQuery
-    Connection = con1
-    Active = True
-    SQL.Strings = (
-      'SELECT * FROM penjualan;')
-    Params = <>
-    Left = 56
-    Top = 8
+    Left = 88
+    Top = 320
   end
   object d1: TDataSource
     DataSet = zqry2
-    Left = 104
-    Top = 8
+    Left = 128
+    Top = 320
   end
   object zqry2: TZQuery
     Connection = con1
     Active = True
     SQL.Strings = (
-      
-        'SELECT penjualan.id_penjualan, penjualan.kode_barang, penjualan.' +
-        'nama_barang, penjualan.nama_kustomer, penjualan.tgl_penjulan, pe' +
-        'njualan.jumlah_barang, penjualan.total_harga, pembayaran.no_stru' +
-        'k, pembayaran.bayar, pembayaran.kembali, pembayaran.mtd_bayar'
-      'FROM penjualan'
-      
-        'INNER JOIN pembayaran ON penjualan.id_penjualan = pembayaran.id_' +
-        'penjualan;')
+      'select * from user')
     Params = <>
-    Left = 144
-    Top = 8
+    Left = 168
+    Top = 320
   end
   object frxdb1: TfrxDBDataset
     UserName = 'frxDBDataset1'
@@ -226,8 +178,8 @@ object FrLapPenjualan: TFrLapPenjualan
       'mtd_bayar=mtd_bayar')
     DataSet = zqry2
     BCDToCurrency = False
-    Left = 232
-    Top = 8
+    Left = 256
+    Top = 320
   end
   object frxReport1: TfrxReport
     Version = '4.12.6'
@@ -244,8 +196,8 @@ object FrLapPenjualan: TFrLapPenjualan
       'begin'
       ''
       'end.')
-    Left = 184
-    Top = 8
+    Left = 208
+    Top = 320
     Datasets = <
       item
         DataSet = frxdb1
@@ -734,7 +686,7 @@ object FrLapPenjualan: TFrLapPenjualan
       'kembali=kembali'
       'mtd_bayar=mtd_bayar')
     BCDToCurrency = False
-    Left = 280
-    Top = 8
+    Left = 304
+    Top = 320
   end
 end

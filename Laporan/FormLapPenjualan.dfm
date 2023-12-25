@@ -1,9 +1,9 @@
-object FrLapPenjualan: TFrLapPenjualan
-  Left = 132
-  Top = 169
-  Width = 1255
-  Height = 480
-  Caption = 'FrLapPenjualan'
+object FrLapPenjualann: TFrLapPenjualann
+  Left = 219
+  Top = 173
+  Width = 1318
+  Height = 578
+  Caption = 'Laporan Data Penjualan'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,22 +15,35 @@ object FrLapPenjualan: TFrLapPenjualan
   TextHeight = 13
   object l1: TLabel
     Left = 408
-    Top = 32
+    Top = 56
     Width = 50
     Height = 13
     Caption = 'Filter Data'
   end
+  object TLabel
+    Left = 368
+    Top = 8
+    Width = 213
+    Height = 19
+    Alignment = taCenter
+    Caption = 'LAPORAN DATA PENJUALAN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object eCari: TEdit
     Left = 648
-    Top = 32
+    Top = 56
     Width = 201
     Height = 21
     TabOrder = 0
-    OnChange = eCariChange
   end
   object dg1: TDBGrid
     Left = 8
-    Top = 64
+    Top = 88
     Width = 969
     Height = 337
     DataSource = d1
@@ -132,13 +145,12 @@ object FrLapPenjualan: TFrLapPenjualan
   end
   object c1: TComboBox
     Left = 464
-    Top = 32
+    Top = 56
     Width = 89
     Height = 21
     ItemHeight = 13
     TabOrder = 2
     Text = 'Default'
-    OnChange = c1Change
     Items.Strings = (
       'Default'
       'Nama Barang'
@@ -146,21 +158,19 @@ object FrLapPenjualan: TFrLapPenjualan
   end
   object b2: TButton
     Left = 568
-    Top = 32
+    Top = 56
     Width = 75
     Height = 25
     Caption = 'Cari Data'
     TabOrder = 3
-    OnClick = b2Click
   end
   object b1: TButton
     Left = 856
-    Top = 32
+    Top = 56
     Width = 121
     Height = 25
     Caption = 'Cetak'
     TabOrder = 4
-    OnClick = b1Click
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -176,7 +186,7 @@ object FrLapPenjualan: TFrLapPenjualan
       'C:\Users\ACER\Documents\Kuliah\Visual\Visual3\tugas-akhir-visual' +
       '-3\libmysql.dll'
     Left = 8
-    Top = 8
+    Top = 32
   end
   object zqry1: TZQuery
     Connection = con1
@@ -185,12 +195,12 @@ object FrLapPenjualan: TFrLapPenjualan
       'SELECT * FROM penjualan;')
     Params = <>
     Left = 56
-    Top = 8
+    Top = 32
   end
   object d1: TDataSource
     DataSet = zqry2
     Left = 104
-    Top = 8
+    Top = 32
   end
   object zqry2: TZQuery
     Connection = con1
@@ -207,7 +217,7 @@ object FrLapPenjualan: TFrLapPenjualan
         'penjualan;')
     Params = <>
     Left = 144
-    Top = 8
+    Top = 32
   end
   object frxdb1: TfrxDBDataset
     UserName = 'frxDBDataset1'
@@ -227,7 +237,7 @@ object FrLapPenjualan: TFrLapPenjualan
     DataSet = zqry2
     BCDToCurrency = False
     Left = 232
-    Top = 8
+    Top = 32
   end
   object frxReport1: TfrxReport
     Version = '4.12.6'
@@ -245,7 +255,7 @@ object FrLapPenjualan: TFrLapPenjualan
       ''
       'end.')
     Left = 184
-    Top = 8
+    Top = 32
     Datasets = <
       item
         DataSet = frxdb1
@@ -735,6 +745,6 @@ object FrLapPenjualan: TFrLapPenjualan
       'mtd_bayar=mtd_bayar')
     BCDToCurrency = False
     Left = 280
-    Top = 8
+    Top = 32
   end
 end
