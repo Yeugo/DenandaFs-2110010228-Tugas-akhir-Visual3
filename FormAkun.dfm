@@ -1,6 +1,6 @@
 object FrAkun: TFrAkun
-  Left = 716
-  Top = 269
+  Left = 15
+  Top = 431
   Width = 328
   Height = 276
   Caption = 'FormBuatAkun'

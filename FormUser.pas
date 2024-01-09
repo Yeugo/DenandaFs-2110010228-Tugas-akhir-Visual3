@@ -42,6 +42,7 @@ type
 
 var
   FrUser: TFrUser;
+  EncryptedPasswordQuery: string;
 
 implementation
 
@@ -49,25 +50,45 @@ implementation
 
 procedure TFrUser.b1Click(Sender: TObject);
 begin
-  zqry1.SQL.Clear;
-  zqry1.SQL.Add('insert into user values(null, "'+e2.Text+'", "'+e3.Text+'", "'+e4.Text+'", "'+c1.Text+'", "'+c2.Text+'")');
+    zqry1.SQL.Clear;
+    zqry1.SQL.Add('INSERT INTO user (user_id, username, password, email, level, status) VALUES (null, :username, AES_ENCRYPT(:password, ''76jV60mkzU''), :email, :level, :status)');
+    zqry1.ParamByName('username').Value := e2.Text;
+    zqry1.ParamByName('password').Value := e3.Text;
+    zqry1.ParamByName('email').Value := e4.Text;
+    zqry1.ParamByName('level').Value := c1.Text;
+    zqry1.ParamByName('status').Value := c2.Text;
+    zqry1.ExecSQL;
+
+    zqry1.SQL.Clear;
+    zqry1.SQL.Add('select * from user');
+    zqry1.Open;
+    Showmessage('DATA BERHASIL DI SIMPAN')
+end;
+
+procedure TFrUser.b2Click(Sender: TObject);
+begin
+  EncryptedPasswordQuery :=
+    'UPDATE user ' +
+    'SET password = AES_ENCRYPT(:plainTextPassword, :encryptionKey), ' +
+    '    username = :username, ' +
+    '    email = :email, ' +
+    '    level = :level, ' +
+    '    status = :status ' +
+    'WHERE username = :username';
+
+  zqry1.SQL.Text := EncryptedPasswordQuery;
+  zqry1.ParamByName('plainTextPassword').AsString := e3.Text; // Plain password
+  zqry1.ParamByName('encryptionKey').AsString := '76jV60mkzU'; // Your encryption key
+  zqry1.ParamByName('username').AsString := e2.Text; // Username
+  zqry1.ParamByName('email').AsString := e4.Text; // Email
+  zqry1.ParamByName('level').AsString := c1.Text; // Level
+  zqry1.ParamByName('status').AsString := c2.Text; // Status
   zqry1.ExecSQL;
 
   zqry1.SQL.Clear;
   zqry1.SQL.Add('select * from user');
   zqry1.Open;
-  Showmessage('DATA BERHASIL DI SIMPAN')
-end;
-
-procedure TFrUser.b2Click(Sender: TObject);
-begin
-  zqry1.Edit;
-  zqry1.FieldByName('username').Text := e2.Text;
-  zqry1.FieldByName('password').Text := e3.Text;
-  zqry1.FieldByName('email').Text := e4.Text;
-  zqry1.FieldByName('level').Text := c1.Text;
-  zqry1.FieldByName('status').Text := c2.Text;
-  zqry1.Post;
+  Showmessage('DATA BERHASIL DI EDIT')
 end;
 
 procedure TFrUser.b4Click(Sender: TObject);
